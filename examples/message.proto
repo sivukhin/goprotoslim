@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package examples;
+option go_package = ".;examples";
+
+message Message {
+  string Id = 1;
+  string Name = 2;
+  int32 Age = 3;
+  Address Address = 4;
+}
+
+message Address {
+  string Country = 1;
+  string City = 2;
+  string Street = 3;
+  string Apartment = 4;
+}
