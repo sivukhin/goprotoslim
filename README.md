@@ -34,29 +34,17 @@ protoimpl.UnknownFields
 
 ## Example
 
-You can find example of generated source code in the [./examples/slim/message.pb.go](./examples/slim/message.pb.go) file.
+You can find example of generated source code in the [./examples/slim/slim.pb.go](./examples/slim/message.pb.go) file.
 
+Couple of tests also written in order to test message size for slim version of generated contracts:
 ```bash
-$> diff examples/default/message.pb.go examples/slim/message.pb.go 
-3c3
-< // 	protoc-gen-go v1.28.1
----
-> // 	protoc-gen-go v1.28.1-devel
-24,26c24,26
-< 	state         protoimpl.MessageState
-< 	sizeCache     protoimpl.SizeCache
-< 	unknownFields protoimpl.UnknownFields
----
-> 	state         struct{}
-> 	sizeCache     struct{}
-> 	unknownFields struct{}
-95,97c95,97
-< 	state         protoimpl.MessageState
-< 	sizeCache     protoimpl.SizeCache
-< 	unknownFields protoimpl.UnknownFields
----
-> 	state         struct{}
-> 	sizeCache     struct{}
-> 	unknownFields struct{}
-
+$> go test -v ./...
+=== RUN   TestMessageSize
+    message_test.go:13: slimSize: 48, defSize: 88
+--- PASS: TestMessageSize (0.00s)
+=== RUN   TestAddressSize
+    message_test.go:22: slimSize: 64, defSize: 104
+--- PASS: TestAddressSize (0.00s)
+PASS
+ok  	github.com/sivukhin/goprotoslim/examples	0.002s
 ```

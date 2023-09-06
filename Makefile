@@ -1,4 +1,4 @@
 gen-examples:
 	mkdir -p examples/default examples/slim
-	cd examples && protoc --go_out=default --go_opt=paths=source_relative message.proto
-	cd examples && protoc --goprotoslim_out=slim --goprotoslim_opt=paths=source_relative message.proto
+	cd examples/def && protoc --go_out=. --go_opt=paths=source_relative def.proto
+	cd examples/slim && protoc --goprotoslim_out=. --goprotoslim_opt=paths=source_relative slim.proto
