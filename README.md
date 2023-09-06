@@ -7,7 +7,7 @@
 To use **goprotoslim**, you need to have Go and the Protocol Buffers compiler (protoc) installed on your system. You can install **goprotoslim** using go install:
 
 ```bash
-go install github.com/sivukhin/goprotoslim/cmd/protoc-gen-go-protoslim 
+go install github.com/sivukhin/goprotoslim/cmd/protoc-gen-go-protoslim@latest 
 ```
 
 ## Usage
