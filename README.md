@@ -7,18 +7,18 @@
 To use **goprotoslim**, you need to have Go and the Protocol Buffers compiler (protoc) installed on your system. You can install **goprotoslim** using go install:
 
 ```bash
-go install github.com/sivukhin/goprotoslim/cmd/protoc-gen-go-goprotoslim 
+go install github.com/sivukhin/goprotoslim/cmd/protoc-gen-go-protoslim 
 ```
 
 ## Usage
 
-**goprotoslim** should be used as a `protoc` plugin. You can use it by specifying the `--goprotoslim_out` option instead of `--go_out` option. Also, you can specify additional parameter for **goprotoslim** plugin (now only `types` parameter is supported):
+**goprotoslim** should be used as a `protoc` plugin. You can use it by specifying the `--go-protoslim_out` option instead of `--go_out` option. Also, you can specify additional parameter for **goprotoslim** plugin (now only `types` parameter is supported):
 
 ```bash
 protoc \
-  --goprotoslim_out=. \
-  --goprotoslim_opt=paths=source_relative \
-  --goprotoslim_opt=types=protoimpl.MessageState+protoimpl.SizeCache \
+  --go-protoslim_out=. \
+  --go-protoslim_opt=paths=source_relative \
+  --go-protoslim_opt=types=protoimpl.MessageState+protoimpl.SizeCache \
   contracts/message.proto
 ```
 
